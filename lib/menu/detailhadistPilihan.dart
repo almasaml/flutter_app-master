@@ -33,7 +33,9 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
               Container(
                 margin: EdgeInsets.all(16),
                 height: 35.h,
-                decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(16)),
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(16)),
               ),
               Container(
                   margin: EdgeInsets.all(32),
@@ -46,7 +48,10 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                       ),
                       Text(
                         "PELAJARAN TENTANG ${widget.model.indonesia.title}",
-                        style: TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                       ),
                       Text(
@@ -74,23 +79,37 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                     itemCount: widget.model.arab.hadist.length,
                     itemBuilder: (context, index) {
                       return Container(
-                          decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(16)),
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 234, 234, 235),
+                              borderRadius: BorderRadius.circular(16)),
                           padding: EdgeInsets.all(4),
-                          margin: EdgeInsets.only(right: 12, left: 12, bottom: 8),
+                          margin:
+                              EdgeInsets.only(right: 12, left: 12, bottom: 8),
                           child: Column(
                             children: [
                               ListTile(
                                 leading: CircleAvatar(
                                   backgroundColor: Colors.blue,
-                                  child: Text(widget.model.indonesia.hadist[index].id.toString()),
+                                  child: Text(widget
+                                      .model.indonesia.hadist[index].id
+                                      .toString()),
                                 ),
-                                title: Text(widget.model.arab.hadist[index].value.toString(), textAlign: TextAlign.justify),
+                                title: Text(
+                                    widget.model.arab.hadist[index].value
+                                        .toString(),
+                                    textAlign: TextAlign.justify),
                               ),
                               ListTile(
-                                title: Text(widget.model.indonesia.hadist[index].value.toString(), textAlign: TextAlign.justify),
+                                title: Text(
+                                    widget.model.indonesia.hadist[index].value
+                                        .toString(),
+                                    textAlign: TextAlign.justify),
                               ),
                               ListTile(
-                                title: Text(widget.model.jawa.hadist[index].value.toString(), textAlign: TextAlign.justify),
+                                title: Text(
+                                    widget.model.jawa.hadist[index].value
+                                        .toString(),
+                                    textAlign: TextAlign.justify),
                               ),
                             ],
                           ));
@@ -106,7 +125,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
             Container(
               height: 1.h,
             ),
-            widget.model == null
+            widget.model.arab.firman[0].value == null
                 ? Text("Firman belum tercantum")
                 : ListView.builder(
                     scrollDirection: Axis.vertical,
@@ -115,17 +134,40 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                     itemCount: widget.model.arab.firman.length,
                     itemBuilder: (context, index) {
                       return Container(
-                        decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(16)),
-                        padding: EdgeInsets.all(4),
-                        margin: EdgeInsets.only(right: 12, left: 12, bottom: 8),
-                        child: ListTile(
-                          leading: CircleAvatar(
-                            backgroundColor: Colors.blue,
-                            child: Text(widget.model.arab.firman![index].id.toString()),
-                          ),
-                          title: Text(widget.model.arab.firman![index].value.toString() ?? "", textAlign: TextAlign.justify),
-                        ),
-                      );
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 234, 234, 235),
+                              borderRadius: BorderRadius.circular(16)),
+                          padding: EdgeInsets.all(4),
+                          margin:
+                              EdgeInsets.only(right: 12, left: 12, bottom: 8),
+                          child: Column(
+                            children: [
+                              ListTile(
+                                leading: CircleAvatar(
+                                  backgroundColor: Colors.blue,
+                                  child: Text(widget
+                                      .model.indonesia.firman[index].id
+                                      .toString()),
+                                ),
+                                title: Text(
+                                    widget.model.arab.firman[index].value
+                                        .toString(),
+                                    textAlign: TextAlign.justify),
+                              ),
+                              ListTile(
+                                title: Text(
+                                    widget.model.indonesia.firman[index].value
+                                        .toString(),
+                                    textAlign: TextAlign.justify),
+                              ),
+                              ListTile(
+                                title: Text(
+                                    widget.model.jawa.firman[index].value
+                                        .toString(),
+                                    textAlign: TextAlign.justify),
+                              ),
+                            ],
+                          ));
                     }),
           ],
         )));
