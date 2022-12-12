@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as rootBundle;
-import 'package:flutter_app/menu/detailhadistPilihan1.dart';
+import 'package:flutter_app/menu/detailhadistPilihan.dart';
 import 'package:flutter_app/menu/mukhtarulHadist.dart';
 import 'package:flutter_app/model/hadistArabModel.dart';
 import 'package:sizer/sizer.dart';
@@ -27,8 +27,7 @@ class _HadistPilihan4State extends State<HadistPilihan4> {
   }
 
   Future _getData() async {
-    final jsondata = await rootBundle.rootBundle
-        .loadString('jsonfile/hadistpilihanindo.json');
+    final jsondata = await rootBundle.rootBundle.loadString('jsonfile/hadistpilihanindo.json');
     final data = jsonDecode(jsondata);
     print(data);
     setState(() {
@@ -39,8 +38,7 @@ class _HadistPilihan4State extends State<HadistPilihan4> {
   }
 
   Future _getDataArab() async {
-    final jsondata = await rootBundle.rootBundle
-        .loadString('jsonfile/hadistpilihanarab.json');
+    final jsondata = await rootBundle.rootBundle.loadString('jsonfile/hadistpilihanarab.json');
     final data = jsonDecode(jsondata);
     print(data);
     setState(() {
@@ -68,9 +66,7 @@ class _HadistPilihan4State extends State<HadistPilihan4> {
                   itemBuilder: (context, index) {
                     if (index != '') {
                       return Container(
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 234, 234, 235),
-                              borderRadius: BorderRadius.circular(10)),
+                          decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
                           padding: const EdgeInsets.only(top: 12, bottom: 12),
                           margin: const EdgeInsets.only(bottom: 12),
                           child: ListTile(

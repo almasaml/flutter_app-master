@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as rootBundle;
@@ -6,16 +8,17 @@ import 'package:flutter_app/model/hadistArabModel.dart';
 import 'package:flutter_app/model/hadist_pilihan.dart';
 import 'package:sizer/sizer.dart';
 
-class DetailHadistPilihan1 extends StatefulWidget {
-  DetailHadistPilihan1({Key? key, required this.model}) : super(key: key);
+class DetailHadistPilihan extends StatefulWidget {
+  const DetailHadistPilihan({Key? key, required this.model}) : super(key: key);
 
   final HadistPilihanModel model;
 
   @override
+  // ignore: unnecessary_new
   _DetailHadistPilihanState createState() => new _DetailHadistPilihanState();
 }
 
-class _DetailHadistPilihanState extends State<DetailHadistPilihan1> {
+class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
