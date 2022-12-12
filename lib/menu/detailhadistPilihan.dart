@@ -29,39 +29,34 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
         body: SingleChildScrollView(
             child: Column(
           children: [
-            Stack(children: <Widget>[
-              Container(
+            Container(
                 margin: EdgeInsets.all(16),
-                height: 35.h,
+                padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(16)),
-              ),
-              Container(
-                  margin: EdgeInsets.all(32),
-                  child: Column(
-                    children: [
-                      Text(
-                        "${widget.model.arab.title}",
-                        style: TextStyle(color: Colors.white, fontSize: 16.0),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        "PELAJARAN TENTANG ${widget.model.indonesia.title}",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        "${widget.model.jawa.title}",
-                        style: TextStyle(color: Colors.white, fontSize: 16.0),
-                        textAlign: TextAlign.center,
-                      )
-                    ],
-                  )),
-            ]),
+                child: Column(
+                  children: [
+                    Text(
+                      "${widget.model.arab.title}",
+                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      "PELAJARAN TENTANG ${widget.model.indonesia.title}",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      "${widget.model.jawa.title}",
+                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+                      textAlign: TextAlign.center,
+                    )
+                  ],
+                )),
             Text(
               "Hadist",
               textAlign: TextAlign.center,
@@ -97,7 +92,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                                 title: Text(
                                     widget.model.arab.hadist[index].value
                                         .toString(),
-                                    textAlign: TextAlign.justify),
+                                    textAlign: TextAlign.right),
                               ),
                               ListTile(
                                 title: Text(
@@ -152,7 +147,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                                 title: Text(
                                     widget.model.arab.firman[index].value
                                         .toString(),
-                                    textAlign: TextAlign.justify),
+                                    textAlign: TextAlign.right),
                               ),
                               ListTile(
                                 title: Text(
