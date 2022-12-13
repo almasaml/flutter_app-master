@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as rootBundle;
 import 'package:flutter_app/menu/detailhadistPilihan.dart';
-import 'package:flutter_app/menu/mukhtarulHadist.dart';
+import 'package:flutter_app/menu/mukhtarulHadist_old.dart';
 import 'package:flutter_app/model/hadistArabModel.dart';
 import 'package:sizer/sizer.dart';
 

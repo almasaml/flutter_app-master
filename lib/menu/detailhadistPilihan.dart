@@ -3,9 +3,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as rootBundle;
-import 'package:flutter_app/menu/mukhtarulHadist.dart';
+import 'package:flutter_app/menu/mukhtarulHadist_old.dart';
 import 'package:flutter_app/model/hadistArabModel.dart';
 import 'package:flutter_app/model/hadist_pilihan.dart';
+import 'package:flutter_app/utils/storage.dart';
 import 'package:sizer/sizer.dart';
 
 class DetailHadistPilihan extends StatefulWidget {
@@ -21,6 +22,8 @@ class DetailHadistPilihan extends StatefulWidget {
 class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
   @override
   Widget build(BuildContext context) {
+    final double scale = Storage.fontScale;
+    print(scale);
     return Scaffold(
         appBar: AppBar(
           title: Text("Hadist Bab ${widget.model.arab.id.toString()}"),
@@ -32,27 +35,22 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
             Container(
                 margin: EdgeInsets.all(16),
                 padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(16)),
+                decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(16)),
                 child: Column(
                   children: [
                     Text(
                       "${widget.model.arab.title}",
-                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+                      style: TextStyle(color: Colors.white, fontSize: 16.0 * scale),
                       textAlign: TextAlign.center,
                     ),
                     Text(
                       "PELAJARAN TENTANG ${widget.model.indonesia.title}",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold),
+                      style: TextStyle(color: Colors.white, fontSize: 16.0 * scale, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
                     ),
                     Text(
                       "${widget.model.jawa.title}",
-                      style: TextStyle(color: Colors.white, fontSize: 16.0),
+                      style: TextStyle(color: Colors.white, fontSize: 16.0 * scale),
                       textAlign: TextAlign.center,
                     )
                   ],
@@ -60,7 +58,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
             Text(
               "Hadist",
               textAlign: TextAlign.center,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0 * scale),
             ),
             Container(
               height: 1.h,
@@ -74,37 +72,39 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                     itemCount: widget.model.arab.hadist.length,
                     itemBuilder: (context, index) {
                       return Container(
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 234, 234, 235),
-                              borderRadius: BorderRadius.circular(16)),
+                          decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(16)),
                           padding: EdgeInsets.all(4),
-                          margin:
-                              EdgeInsets.only(right: 12, left: 12, bottom: 8),
+                          margin: EdgeInsets.only(right: 12, left: 12, bottom: 8),
                           child: Column(
                             children: [
                               ListTile(
                                 leading: CircleAvatar(
                                   backgroundColor: Colors.blue,
-                                  child: Text(widget
-                                      .model.indonesia.hadist[index].id
-                                      .toString()),
+                                  child: Text(
+                                    widget.model.indonesia.hadist[index].id.toString(),
+                                  ),
                                 ),
                                 title: Text(
-                                    widget.model.arab.hadist[index].value
-                                        .toString(),
-                                    textAlign: TextAlign.right),
+                                  widget.model.arab.hadist[index].value.toString(),
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(fontSize: 16 * scale),
+                                ),
                               ),
+                              Divider(),
                               ListTile(
                                 title: Text(
-                                    widget.model.indonesia.hadist[index].value
-                                        .toString(),
-                                    textAlign: TextAlign.justify),
+                                  widget.model.indonesia.hadist[index].value.toString(),
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(fontSize: 16 * scale),
+                                ),
                               ),
+                              Divider(),
                               ListTile(
                                 title: Text(
-                                    widget.model.jawa.hadist[index].value
-                                        .toString(),
-                                    textAlign: TextAlign.justify),
+                                  widget.model.jawa.hadist[index].value.toString(),
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(fontSize: 16 * scale),
+                                ),
                               ),
                             ],
                           ));
@@ -129,37 +129,23 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                     itemCount: widget.model.arab.firman.length,
                     itemBuilder: (context, index) {
                       return Container(
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 234, 234, 235),
-                              borderRadius: BorderRadius.circular(16)),
+                          decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(16)),
                           padding: EdgeInsets.all(4),
-                          margin:
-                              EdgeInsets.only(right: 12, left: 12, bottom: 8),
+                          margin: EdgeInsets.only(right: 12, left: 12, bottom: 8),
                           child: Column(
                             children: [
                               ListTile(
                                 leading: CircleAvatar(
                                   backgroundColor: Colors.blue,
-                                  child: Text(widget
-                                      .model.indonesia.firman[index].id
-                                      .toString()),
+                                  child: Text(widget.model.indonesia.firman[index].id.toString()),
                                 ),
-                                title: Text(
-                                    widget.model.arab.firman[index].value
-                                        .toString(),
-                                    textAlign: TextAlign.right),
+                                title: Text(widget.model.arab.firman[index].value.toString(), textAlign: TextAlign.right),
                               ),
                               ListTile(
-                                title: Text(
-                                    widget.model.indonesia.firman[index].value
-                                        .toString(),
-                                    textAlign: TextAlign.justify),
+                                title: Text(widget.model.indonesia.firman[index].value.toString(), textAlign: TextAlign.justify),
                               ),
                               ListTile(
-                                title: Text(
-                                    widget.model.jawa.firman[index].value
-                                        .toString(),
-                                    textAlign: TextAlign.justify),
+                                title: Text(widget.model.jawa.firman[index].value.toString(), textAlign: TextAlign.justify),
                               ),
                             ],
                           ));
