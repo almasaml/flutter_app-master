@@ -1,7 +1,7 @@
 import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/menu/hadistPilihan.dart';
-import 'package:flutter_app/menu/mukhtarulHadist copy.dart';
+import 'package:flutter_app/menu/mukhtarulHadist.dart';
 import 'package:flutter_app/styles/color.dart';
 import 'package:flutter_app/styles/typo.dart';
 
@@ -29,8 +29,7 @@ class _BerandaState extends State<Beranda> {
             Container(height: 12.0),
             Container(
               width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16), color: Colors.blue),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: Colors.blue),
               padding: EdgeInsets.all(16),
               child: Text(
                 "Mukhtarul Hadist ialah kitab Hadist yang mencakup hadist-hadist shahih menjadi satu, Hadist yang mengandung arti mengenai hukum, budi pekerti atau akhlak, etika bersosialisasi serta hal-hal terbaik lain yang tentu saja untuk dijadikan panutan bagi kaum muslimin dalam kehidupan bermasyarakat.",
@@ -39,9 +38,7 @@ class _BerandaState extends State<Beranda> {
             ),
             Container(height: 20.0),
             Container(
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 234, 234, 235),
-                  borderRadius: BorderRadius.circular(10)),
+              decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
               margin: EdgeInsets.only(bottom: 12),
               child: ListTile(
                   leading: Icon(
@@ -50,25 +47,17 @@ class _BerandaState extends State<Beranda> {
                   ),
                   title: Text("Mukhtarul Ahadist (ا - ت)"),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => MukhtarulHadist()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MukhtarulHadist()));
                   }),
             ),
             Container(
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 234, 234, 235),
-                  borderRadius: BorderRadius.circular(10)),
+              decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
               margin: EdgeInsets.only(bottom: 12),
               child: ListTile(
                   leading: Icon(Icons.note, color: Colors.blue),
                   title: Text("Hadist - Hadist Pilihan"),
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HadistPilihan()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihan()));
                   }),
             ),
             Container(height: 12.0),

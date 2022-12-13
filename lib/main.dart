@@ -1,31 +1,32 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter_app/menu/beranda.dart';
 import 'package:flutter_app/menu/jadwalsholat.dart';
 import 'package:flutter_app/menu/pengaturan.dart';
 import 'package:flutter_app/splashscreen.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:sizer/sizer.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await initializeDateFormatting('id_ID', null).then((_) => runApp(MyApp())); 
-} 
+  await GetStorage.init();
+  await initializeDateFormatting('id_ID', null).then((_) => runApp(MyApp()));
+}
 
 class MyApp extends StatelessWidget {
-  
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            home: SplashScreen(),
-          );
-      }
-    ); 
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(),
+      );
+    });
   }
 }
 
@@ -36,11 +37,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedNavbar = 0;
-  final List<Widget> _children = [
-    Beranda(),
-    JadwalSholat(),
-    Pengaturan()
-  ];
+  final List<Widget> _children = [Beranda(), JadwalSholat(), Pengaturan()];
 
   void _changeSelectedNavBar(int index) {
     setState(() {
@@ -55,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //   title: Text("Terjemahan Mukhtarul Ahadist"),
       // ),
       body: _children[_selectedNavbar],
-      
+
       bottomNavigationBar: ConvexAppBar(
         height: 68,
         items: [
@@ -65,8 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         initialActiveIndex: _selectedNavbar,
         onTap: _changeSelectedNavBar,
-      ),      
-
+      ),
     );
   }
 }
