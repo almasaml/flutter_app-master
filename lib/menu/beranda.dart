@@ -17,7 +17,7 @@ class _BerandaState extends State<Beranda> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Terjemahan Mukhtarul Ahadist"),
+          title: Text("Terjemahan Mukhtarul Ahadis"),
           automaticallyImplyLeading: false,
         ),
         body: Container(
@@ -29,35 +29,46 @@ class _BerandaState extends State<Beranda> {
             Container(height: 12.0),
             Container(
               width: double.infinity,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: Colors.blue),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16), color: Colors.blue),
               padding: EdgeInsets.all(16),
               child: Text(
-                "Mukhtarul Hadist ialah kitab Hadist yang mencakup hadist-hadist shahih menjadi satu, Hadist yang mengandung arti mengenai hukum, budi pekerti atau akhlak, etika bersosialisasi serta hal-hal terbaik lain yang tentu saja untuk dijadikan panutan bagi kaum muslimin dalam kehidupan bermasyarakat.",
+                "Kitab Mukhtarul Hadis merupakan kitab yang mencakup kumpulan hadis-hadis pilihan. Hadis yang terdapat dalam kitab ini merupakan hadis shohih, yang mengandung arti mengenai hukum, budi pekerti (akhlak), etika bersosial, dan hal-hal terbaik lainnya tentang kehidupan dunia dan balasan yang di terima di akhirat, serta panduan bagi kaum muslimin dalam kehidupan bermasyarakat.",
                 style: TextStyle(color: Colors.white),
               ),
             ),
             Container(height: 20.0),
             Container(
-              decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 234, 234, 235),
+                  borderRadius: BorderRadius.circular(10)),
               margin: EdgeInsets.only(bottom: 12),
               child: ListTile(
                   leading: Icon(
                     Icons.library_books,
                     color: Colors.blue,
                   ),
-                  title: Text("Mukhtarul Ahadist (ا - ت)"),
+                  title: Text("Mukhtarul Ahadis (ا - ت)"),
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => MukhtarulHadist()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MukhtarulHadist()));
                   }),
             ),
             Container(
-              decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 234, 234, 235),
+                  borderRadius: BorderRadius.circular(10)),
               margin: EdgeInsets.only(bottom: 12),
               child: ListTile(
                   leading: Icon(Icons.note, color: Colors.blue),
-                  title: Text("Hadist - Hadist Pilihan"),
+                  title: Text("Hadis - Hadis Pilihan"),
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihan()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HadistPilihan()));
                   }),
             ),
             Container(height: 12.0),
@@ -80,40 +91,6 @@ Widget backgroundHeader() {
               ),
             ),
           ),
-        ],
-      ));
-}
-
-Widget backgroundHeaderexp() {
-  return Container(
-      margin: const EdgeInsets.all(16),
-      height: 40.h,
-      child: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              image: DecorationImage(
-                image: AssetImage("assets/images/mh.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          Align(
-              alignment: AlignmentDirectional.bottomCenter,
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: Color.fromARGB(99, 0, 0, 0),
-                ),
-                height: 15.h,
-                padding: EdgeInsets.all(16),
-                child: Text(
-                  "Mukhtarul Hadist ialah kitab Hadist yang mencakup hadist-hadist shahih menjadi satu, Hadist yang mengandung arti mengenai hukum, budi pekerti atau akhlak, etika bersosialisasi serta hal-hal terbaik lain yang tentu saja untuk dijadikan panutan bagi kaum muslimin dalam kehidupan bermasyarakat.",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ))
         ],
       ));
 }

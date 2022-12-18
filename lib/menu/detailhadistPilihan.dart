@@ -26,7 +26,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
     print(scale);
     return Scaffold(
         appBar: AppBar(
-          title: Text("Hadist Bab ${widget.model.arab.id.toString()}"),
+          title: Text("Hadis Bab ${widget.model.arab.id.toString()}"),
           automaticallyImplyLeading: true,
         ),
         body: SingleChildScrollView(
@@ -63,7 +63,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                   ],
                 )),
             Text(
-              "Hadist",
+              "Hadis",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: 25.0 * scale),
@@ -108,7 +108,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                                 title: Text(
                                   widget.model.indonesia.hadist[index].value
                                       .toString(),
-                                  textAlign: TextAlign.justify,
+                                  textAlign: TextAlign.left,
                                   style: TextStyle(fontSize: 16 * scale),
                                 ),
                               ),
@@ -117,7 +117,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                                 title: Text(
                                   widget.model.jawa.hadist[index].value
                                       .toString(),
-                                  textAlign: TextAlign.justify,
+                                  textAlign: TextAlign.left,
                                   style: TextStyle(fontSize: 16 * scale),
                                 ),
                               ),
@@ -174,7 +174,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                                     title: Text(
                                       widget.model.indonesia.firman[index].value
                                           .toString(),
-                                      textAlign: TextAlign.justify,
+                                      textAlign: TextAlign.left,
                                       style: TextStyle(fontSize: 16 * scale),
                                     ),
                                   ),
@@ -182,7 +182,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                                     title: Text(
                                       widget.model.jawa.firman[index].value
                                           .toString(),
-                                      textAlign: TextAlign.justify,
+                                      textAlign: TextAlign.left,
                                       style: TextStyle(fontSize: 16 * scale),
                                     ),
                                   ),

@@ -34,7 +34,7 @@ class _MukhtarulHadistState extends State<MukhtarulHadist> {
                   "assets/images/bg.jpg",
                   fit: BoxFit.cover,
                 ),
-                title: Text('Terjemahan Mukhtarul Ahadist'),
+                title: Text('Terjemahan Mukhtarul Ahadis'),
               ),
               expandedHeight: 20.h,
             ),
@@ -48,7 +48,10 @@ class _MukhtarulHadistState extends State<MukhtarulHadist> {
                     var items = data.data as List<ArabDataModel>;
                     return ListView.builder(itemBuilder: (context, index) {
                       return HadistListItem(
-                          arab: items[index].value.toString(), indonesia: items[index].valueIndonesia.toString(), jawa: items[index].valueJawa.toString(), ayat: items[index].id.toString());
+                          arab: items[index].value.toString(),
+                          indonesia: items[index].valueIndonesia.toString(),
+                          jawa: items[index].valueJawa.toString(),
+                          ayat: items[index].id.toString());
                     });
                   } else {
                     return Center(
@@ -65,9 +68,12 @@ class _MukhtarulHadistState extends State<MukhtarulHadist> {
   }
 
   Future<List<ArabDataModel>> readJsonData() async {
-    final jsondata = await rootBundle.rootBundle.loadString('jsonfile/arab.json');
-    final jsondata2 = await rootBundle.rootBundle.loadString('jsonfile/indonesia.json');
-    final jsondata3 = await rootBundle.rootBundle.loadString('jsonfile/jawa.json');
+    final jsondata =
+        await rootBundle.rootBundle.loadString('jsonfile/arab.json');
+    final jsondata2 =
+        await rootBundle.rootBundle.loadString('jsonfile/indonesia.json');
+    final jsondata3 =
+        await rootBundle.rootBundle.loadString('jsonfile/jawa.json');
     final list = json.decode(jsondata) as List<dynamic>;
     final list2 = json.decode(jsondata2) as List<dynamic>;
     final list3 = json.decode(jsondata3) as List<dynamic>;
@@ -161,37 +167,43 @@ class _Hadist extends StatelessWidget {
             textAlign: TextAlign.right,
           ),
           const Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
-            Text(
-              "Terjemahan Indonesia :",
-              style: TextStyle(fontSize: 14.0 * scale, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.left,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              indonesia,
-              style: TextStyle(fontSize: 14.0 * scale),
-              textAlign: TextAlign.justify,
-            ),
-          ]),
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Terjemahan Indonesia :",
+                  style: TextStyle(
+                      fontSize: 14.0 * scale, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.left,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  indonesia,
+                  style: TextStyle(fontSize: 14.0 * scale),
+                  textAlign: TextAlign.left,
+                ),
+              ]),
           const Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
-            Text(
-              "Terjemahan Jawa :",
-              style: TextStyle(fontSize: 14.0 * scale, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.left,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              jawa,
-              style: TextStyle(fontSize: 14.0 * scale),
-              textAlign: TextAlign.justify,
-            ),
-          ]),
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Terjemahan Jawa :",
+                  style: TextStyle(
+                      fontSize: 14.0 * scale, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.left,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  jawa,
+                  style: TextStyle(fontSize: 14.0 * scale),
+                  textAlign: TextAlign.left,
+                ),
+              ]),
           Container(height: 16.0),
         ],
       ),

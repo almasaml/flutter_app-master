@@ -32,9 +32,12 @@ class _HadistPilihanState extends State<HadistPilihan> {
     setState(() {
       isLoading = true;
     });
-    final jsondata = await rootBundle.rootBundle.loadString('jsonfile/hadistpilihanarab.json');
-    final jsondata2 = await rootBundle.rootBundle.loadString('jsonfile/hadistpilihanindo.json');
-    final jsondata3 = await rootBundle.rootBundle.loadString('jsonfile/hadistpilihanjawa.json');
+    final jsondata = await rootBundle.rootBundle
+        .loadString('jsonfile/hadistpilihanarab.json');
+    final jsondata2 = await rootBundle.rootBundle
+        .loadString('jsonfile/hadistpilihanindo.json');
+    final jsondata3 = await rootBundle.rootBundle
+        .loadString('jsonfile/hadistpilihanjawa.json');
     final list = json.decode(jsondata) as List<dynamic>;
     final list2 = json.decode(jsondata2) as List<dynamic>;
     final list3 = json.decode(jsondata3) as List<dynamic>;
@@ -58,7 +61,7 @@ class _HadistPilihanState extends State<HadistPilihan> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Hadist - Hadist Pilihan"),
+          title: Text("Hadis - Hadis Pilihan"),
           automaticallyImplyLeading: true,
         ),
         body: Container(
@@ -74,7 +77,9 @@ class _HadistPilihanState extends State<HadistPilihan> {
                     backgroundHeader(),
                     Container(height: 12.0),
                     Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 234, 234, 235),
+                          borderRadius: BorderRadius.circular(10)),
                       margin: EdgeInsets.only(bottom: 12),
                       child: ListTile(
                           leading: CircleAvatar(
@@ -84,11 +89,19 @@ class _HadistPilihanState extends State<HadistPilihan> {
                           title: Text('Bab 1 - Bab 10'),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihanBab(dataHadist: allHadist.getRange(0, 10).toList(), titlePage: "Hadist Bab 1 - Bab 10")));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HadistPilihanBab(
+                                        dataHadist:
+                                            allHadist.getRange(0, 10).toList(),
+                                        titlePage: "Hadis Bab 1 - Bab 10")));
                           }),
                     ),
                     Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 234, 234, 235),
+                          borderRadius: BorderRadius.circular(10)),
                       margin: EdgeInsets.only(bottom: 12),
                       child: ListTile(
                           leading: CircleAvatar(
@@ -98,11 +111,19 @@ class _HadistPilihanState extends State<HadistPilihan> {
                           title: Text('Bab 11 - Bab 20'),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihanBab(dataHadist: allHadist.getRange(10, 20).toList(), titlePage: "Hadist Bab 11 - Bab 20")));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HadistPilihanBab(
+                                        dataHadist:
+                                            allHadist.getRange(10, 20).toList(),
+                                        titlePage: "Hadis Bab 11 - Bab 20")));
                           }),
                     ),
                     Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 234, 234, 235),
+                          borderRadius: BorderRadius.circular(10)),
                       margin: EdgeInsets.only(bottom: 12),
                       child: ListTile(
                           leading: CircleAvatar(
@@ -112,11 +133,19 @@ class _HadistPilihanState extends State<HadistPilihan> {
                           title: Text('Bab 21 - Bab 30'),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihanBab(dataHadist: allHadist.getRange(20, 30).toList(), titlePage: "Hadist Bab 21 - Bab 30")));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HadistPilihanBab(
+                                        dataHadist:
+                                            allHadist.getRange(20, 30).toList(),
+                                        titlePage: "Hadis Bab 21 - Bab 30")));
                           }),
                     ),
                     Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 234, 234, 235),
+                          borderRadius: BorderRadius.circular(10)),
                       margin: EdgeInsets.only(bottom: 12),
                       child: ListTile(
                           leading: CircleAvatar(
@@ -126,11 +155,19 @@ class _HadistPilihanState extends State<HadistPilihan> {
                           title: Text('Bab 31 - Bab 40'),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihanBab(dataHadist: allHadist.getRange(30, 40).toList(), titlePage: "Hadist Bab 31 - Bab 40")));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HadistPilihanBab(
+                                        dataHadist:
+                                            allHadist.getRange(30, 40).toList(),
+                                        titlePage: "Hadis Bab 31 - Bab 40")));
                           }),
                     ),
                     Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 234, 234, 235),
+                          borderRadius: BorderRadius.circular(10)),
                       margin: EdgeInsets.only(bottom: 12),
                       child: ListTile(
                           leading: CircleAvatar(
@@ -140,11 +177,19 @@ class _HadistPilihanState extends State<HadistPilihan> {
                           title: Text('Bab 41 - Bab 50'),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihanBab(dataHadist: allHadist.getRange(40, 50).toList(), titlePage: "Hadist Bab 41 - Bab 50")));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HadistPilihanBab(
+                                        dataHadist:
+                                            allHadist.getRange(40, 50).toList(),
+                                        titlePage: "Hadis Bab 41 - Bab 50")));
                           }),
                     ),
                     Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 234, 234, 235),
+                          borderRadius: BorderRadius.circular(10)),
                       margin: EdgeInsets.only(bottom: 12),
                       child: ListTile(
                           leading: CircleAvatar(
@@ -154,11 +199,19 @@ class _HadistPilihanState extends State<HadistPilihan> {
                           title: Text('Bab 51 - Bab 60'),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihanBab(dataHadist: allHadist.getRange(50, 60).toList(), titlePage: "Hadist Bab 51 - Bab 60")));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HadistPilihanBab(
+                                        dataHadist:
+                                            allHadist.getRange(50, 60).toList(),
+                                        titlePage: "Hadis Bab 51 - Bab 60")));
                           }),
                     ),
                     Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 234, 234, 235),
+                          borderRadius: BorderRadius.circular(10)),
                       margin: EdgeInsets.only(bottom: 12),
                       child: ListTile(
                           leading: CircleAvatar(
@@ -168,11 +221,19 @@ class _HadistPilihanState extends State<HadistPilihan> {
                           title: Text('Bab 61 - Bab 70'),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihanBab(dataHadist: allHadist.getRange(60, 70).toList(), titlePage: "Hadist Bab 61 - Bab 70")));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HadistPilihanBab(
+                                        dataHadist:
+                                            allHadist.getRange(60, 70).toList(),
+                                        titlePage: "Hadis Bab 61 - Bab 70")));
                           }),
                     ),
                     Container(
-                      decoration: BoxDecoration(color: Color.fromARGB(255, 234, 234, 235), borderRadius: BorderRadius.circular(10)),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 234, 234, 235),
+                          borderRadius: BorderRadius.circular(10)),
                       margin: EdgeInsets.only(bottom: 12),
                       child: ListTile(
                           leading: CircleAvatar(
@@ -182,7 +243,13 @@ class _HadistPilihanState extends State<HadistPilihan> {
                           title: Text('Bab 71 - Bab 79'),
                           trailing: Icon(Icons.keyboard_arrow_right),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => HadistPilihanBab(dataHadist: allHadist.getRange(70, 79).toList(), titlePage: "Hadist Bab 70 - Bab 79")));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HadistPilihanBab(
+                                        dataHadist:
+                                            allHadist.getRange(70, 79).toList(),
+                                        titlePage: "Hadis Bab 70 - Bab 79")));
                           }),
                     ),
                   ],
@@ -213,7 +280,8 @@ Widget buttonBab1(context) {
       borderRadius: BorderRadius.circular(12.0),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => MukhtarulHadist()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => MukhtarulHadist()));
         },
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 10.0),
@@ -221,7 +289,8 @@ Widget buttonBab1(context) {
         ),
         child: Text(
           "Bab 1 - Bab 10",
-          style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     ),
@@ -237,7 +306,8 @@ Widget buttonBab2(context) {
       borderRadius: BorderRadius.circular(12.0),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => MukhtarulHadist()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => MukhtarulHadist()));
         },
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.symmetric(horizontal: 140.0, vertical: 25.0),
@@ -245,7 +315,8 @@ Widget buttonBab2(context) {
         ),
         child: Text(
           "Bab 11 - Bab 20",
-          style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     ),
@@ -267,7 +338,8 @@ Widget buttonBab3() {
         ),
         child: Text(
           "Bab 21 - Bab 30",
-          style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     ),
@@ -289,7 +361,8 @@ Widget buttonBab4() {
         ),
         child: Text(
           "Bab 31 - Bab 40",
-          style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     ),
@@ -311,7 +384,8 @@ Widget buttonBab5() {
         ),
         child: Text(
           "Bab 41 - Bab 50",
-          style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     ),
@@ -333,7 +407,8 @@ Widget buttonBab6() {
         ),
         child: Text(
           "Bab 51 - Bab 60",
-          style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     ),
@@ -355,7 +430,8 @@ Widget buttonBab7() {
         ),
         child: Text(
           "Bab 61 - Bab 70",
-          style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     ),
@@ -378,7 +454,8 @@ Widget buttonBab8() {
         ),
         child: Text(
           "Bab 71 - Bab 79",
-          style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
     ),
