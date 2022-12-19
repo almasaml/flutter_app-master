@@ -25,38 +25,38 @@ class _TampilanHadistPilihanSettingState extends State<TampilanHadistPilihanSett
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bahasa Hadist Pilihan"),
+        title: const Text("Bahasa Hadist Pilihan"),
       ),
       body: Column(
         children: [
           CheckboxListTile(
             value: bahasaModel.jawa,
-            title: Text("Bahasa Jawa"),
+            title: const Text("Bahasa Jawa"),
             onChanged: (value) {
               setState(() {
                 bahasaModel.jawa = value!;
               });
-              Storage.setAllHadistBahasa(bahasaModel);
+              Storage.setHadistPilihanBahasa(bahasaModel);
             },
           ),
           CheckboxListTile(
             value: bahasaModel.indonesia,
-            title: Text("Bahasa Indonesia"),
+            title: const Text("Bahasa Indonesia"),
             onChanged: (value) {
               setState(() {
                 bahasaModel.indonesia = value!;
               });
-              Storage.setAllHadistBahasa(bahasaModel);
+              Storage.setHadistPilihanBahasa(bahasaModel);
             },
           ),
           CheckboxListTile(
             value: bahasaModel.arab,
-            title: Text("Bahasa Arab"),
+            title: const Text("Bahasa Arab"),
             onChanged: (value) {
               setState(() {
                 bahasaModel.arab = value!;
               });
-              Storage.setAllHadistBahasa(bahasaModel);
+              Storage.setHadistPilihanBahasa(bahasaModel);
             },
           ),
         ],

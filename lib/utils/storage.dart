@@ -22,8 +22,10 @@ class Storage {
   static ModeBahasaModel get allHadistBahasa {
     var box = GetStorage();
     var value = box.read("ALL_HADIST_MODE") ?? ModeBahasaModel(jawa: true, indonesia: true, arab: true);
-
-    return value;
+    if (value is ModeBahasaModel) {
+      return value;
+    }
+    return ModeBahasaModel.fromJson(value);
   }
 
   static setHadistPilihanBahasa(ModeBahasaModel model) {
@@ -35,6 +37,9 @@ class Storage {
     var box = GetStorage();
     var value = box.read("HADIST_PILIHAN") ?? ModeBahasaModel(jawa: true, indonesia: true, arab: true);
 
-    return value;
+    if (value is ModeBahasaModel) {
+      return value;
+    }
+    return ModeBahasaModel.fromJson(value);
   }
 }
