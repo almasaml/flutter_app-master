@@ -58,31 +58,29 @@ class _JadwalSholatState extends State<JadwalSholat> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Jadwal Sholat"),
-        ),
-        body: Container(
-            color: Color.fromARGB(255, 233, 233, 233),
-            width: double.infinity,
-            height: double.infinity,
-            child: ListView(
-              children: [
-                //SizedBox(height: 16),
-                //card img masjid dan tangal
-                backgroundHeader(formattedDate),
-                SearchView(),
-                //listview jadwal
-                lokasi != null
-                    ? SchedulePray()
-                    : Text(
-                        "Pilih Lokasi Anda",
-                        style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-              ],
-            )),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Jadwal Sholat"),
       ),
+      body: Container(
+          color: Color.fromARGB(255, 233, 233, 233),
+          width: double.infinity,
+          height: double.infinity,
+          child: ListView(
+            children: [
+              //SizedBox(height: 16),
+              //card img masjid dan tangal
+              backgroundHeader(formattedDate),
+              SearchView(),
+              //listview jadwal
+              lokasi != null
+                  ? SchedulePray()
+                  : Text(
+                      "Pilih Lokasi Anda",
+                      style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+            ],
+          )),
     );
   }
 
