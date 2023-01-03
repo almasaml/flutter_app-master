@@ -40,7 +40,7 @@ class _SplashScreen extends State<SplashScreen> {
               height: 24.0,
             ),
             Text(
-              "Terjemahan Mukhtarul Ahadist",
+              "Terjemahan Mukhtarul Ahadis",
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

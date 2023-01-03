@@ -50,7 +50,10 @@ class _MukhtarulHadistState extends State<MukhtarulHadist> {
                     var items = data.data as List<ArabDataModel>;
                     return ListView.builder(itemBuilder: (context, index) {
                       return HadistListItem(
-                          arab: items[index].value.toString(), indonesia: items[index].valueIndonesia.toString(), jawa: items[index].valueJawa.toString(), ayat: items[index].id.toString());
+                          arab: items[index].value.toString(),
+                          indonesia: items[index].valueIndonesia.toString(),
+                          jawa: items[index].valueJawa.toString(),
+                          ayat: items[index].id.toString());
                     });
                   } else {
                     return Center(
@@ -67,9 +70,12 @@ class _MukhtarulHadistState extends State<MukhtarulHadist> {
   }
 
   Future<List<ArabDataModel>> readJsonData() async {
-    final jsondata = await rootBundle.rootBundle.loadString('jsonfile/arab.json');
-    final jsondata2 = await rootBundle.rootBundle.loadString('jsonfile/indonesia.json');
-    final jsondata3 = await rootBundle.rootBundle.loadString('jsonfile/jawa.json');
+    final jsondata =
+        await rootBundle.rootBundle.loadString('jsonfile/arab.json');
+    final jsondata2 =
+        await rootBundle.rootBundle.loadString('jsonfile/indonesia.json');
+    final jsondata3 =
+        await rootBundle.rootBundle.loadString('jsonfile/jawa.json');
     final list = json.decode(jsondata) as List<dynamic>;
     final list2 = json.decode(jsondata2) as List<dynamic>;
     final list3 = json.decode(jsondata3) as List<dynamic>;
@@ -174,7 +180,8 @@ class _Hadist extends StatelessWidget {
                 const Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
                 Text(
                   "Terjemahan Indonesia :",
-                  style: TextStyle(fontSize: 14.0 * scale, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 14.0 * scale, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.left,
                 ),
                 SizedBox(
@@ -183,7 +190,7 @@ class _Hadist extends StatelessWidget {
                 Text(
                   indonesia,
                   style: TextStyle(fontSize: 14.0 * scale),
-                  textAlign: TextAlign.justify,
+                  textAlign: TextAlign.left,
                 ),
               ],
             ),
@@ -196,7 +203,8 @@ class _Hadist extends StatelessWidget {
                 const Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
                 Text(
                   "Terjemahan Jawa :",
-                  style: TextStyle(fontSize: 14.0 * scale, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 14.0 * scale, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.left,
                 ),
                 SizedBox(
@@ -205,7 +213,7 @@ class _Hadist extends StatelessWidget {
                 Text(
                   jawa,
                   style: TextStyle(fontSize: 14.0 * scale),
-                  textAlign: TextAlign.justify,
+                  textAlign: TextAlign.left,
                 ),
               ],
             ),

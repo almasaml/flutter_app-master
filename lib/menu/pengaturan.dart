@@ -37,7 +37,7 @@ class Pengaturan extends StatelessWidget {
                   Icons.view_module,
                   color: Colors.blue,
                 ),
-                title: Text('Tampilan hadist'),
+                title: Text('Tampilan hadis'),
                 trailing: Icon(Icons.keyboard_arrow_right),
                 onTap: () {
                   Navigator.push(
@@ -54,7 +54,7 @@ class Pengaturan extends StatelessWidget {
                   Icons.view_carousel,
                   color: Colors.blue,
                 ),
-                title: Text('Tampilan hadist pilihan'),
+                title: Text('Tampilan hadis pilihan'),
                 trailing: Icon(Icons.keyboard_arrow_right),
                 onTap: () {
                   Navigator.push(

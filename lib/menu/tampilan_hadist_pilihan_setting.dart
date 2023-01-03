@@ -8,17 +8,19 @@ class TampilanHadistPilihanSetting extends StatefulWidget {
   const TampilanHadistPilihanSetting({super.key});
 
   @override
-  State<TampilanHadistPilihanSetting> createState() => _TampilanHadistPilihanSettingState();
+  State<TampilanHadistPilihanSetting> createState() =>
+      _TampilanHadistPilihanSettingState();
 }
 
-class _TampilanHadistPilihanSettingState extends State<TampilanHadistPilihanSetting> {
+class _TampilanHadistPilihanSettingState
+    extends State<TampilanHadistPilihanSetting> {
   late ModeBahasaModel bahasaModel;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    bahasaModel = Storage.allHadistBahasa;
+    bahasaModel = Storage.hadistPilihanBahasa;
   }
 
   @override

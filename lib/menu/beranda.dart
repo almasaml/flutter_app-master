@@ -79,7 +79,7 @@ class _BerandaState extends State<Beranda> {
 
 Widget backgroundHeader() {
   return Container(
-      height: 30.h,
+      height: 25.h,
       child: Stack(
         children: [
           Container(
