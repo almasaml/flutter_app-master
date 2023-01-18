@@ -144,7 +144,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                                           widget.model.indonesia.hadist[index]
                                               .value
                                               .toString(),
-                                          textAlign: TextAlign.justify,
+                                          textAlign: TextAlign.left,
                                           style:
                                               TextStyle(fontSize: 16 * scale),
                                         ),
@@ -157,7 +157,7 @@ class _DetailHadistPilihanState extends State<DetailHadistPilihan> {
                                         title: Text(
                                           widget.model.jawa.hadist[index].value
                                               .toString(),
-                                          textAlign: TextAlign.justify,
+                                          textAlign: TextAlign.left,
                                           style:
                                               TextStyle(fontSize: 16 * scale),
                                         ),
